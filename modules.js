@@ -1,0 +1,1 @@
+const getdata=required(./data)
