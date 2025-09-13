@@ -1,3 +1,5 @@
 names=['athi','sankar','logu','ingil','mohan']
+age=[23,34,12,32,12]
 
-console.log(names)
+module.exports={names,age}
+
