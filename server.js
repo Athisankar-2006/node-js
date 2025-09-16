@@ -1,18 +1,51 @@
-const http= require('http')
+const http= require('http');
+const fs=require('fs');
+
+
 
 
 const server= http.createServer((req,res)=>{
-    console.log("request made");
-    console.log(req.url);
-    console.log(req.method)
 
+    
+    let path='./docs/';
 
-    res.setHeader('Content-type','text/html')
-    res.write("<h1>haii</h1>")
-    res.write("<h1>do it anything for you</h1>")
-    res.end()
+    if ( req.url=='/'){
+        path+= 'index.html'
+        res.statusCode=200
+    }
+    else if(req.url == '/home'){
+        res.statusCode=301
+        res.setHeader('Location','/');
+        res.end();
 
-  
+    }
+    else if (req.url=='/join'){
+        path+='join.html'
+        res.statusCode=200
+    }
+    else if(req.url=='/about'){
+        path+='about.html'
+        res.statusCode=200
+    }
+    else{
+        path+='notFound.html'
+        res.statusCode= 404; 
+    }
+
+    res.setHeader('Content-Type','text/html')
+ 
+    fs.readFile(path,(err,data)=>{
+        if(err){
+            console.log(err.message);
+            res.end()
+        }
+        else{
+            res.write(data);
+            res.end()
+        }
+    })
+    
+   
 
 })
 
