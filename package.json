@@ -1,0 +1,26 @@
+{
+  "name": "athi",
+  "version": "1.1.1",
+  "description": "this is my first backend",
+  "main": "data.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Athisankar-2006/node-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Athisankar-2006/node-js/issues"
+  },
+  "homepage": "https://github.com/Athisankar-2006/node-js#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
